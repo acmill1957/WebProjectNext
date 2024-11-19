@@ -1,13 +1,6 @@
-import Image from "next/image";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "../components/HomePage";
-import Login from "../components/Login";
-import Register from "../components/Register";
-import Listings from "../components/Listings";
-import CreateListing from "../components/CreateListing";
-import ItemDetails from "../components/ItemDetails";
 import NavBar from "../components/NavBar";
+
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
