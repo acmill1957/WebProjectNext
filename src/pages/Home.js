@@ -1,6 +1,6 @@
 // Home.js
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Home = ({ listings = [] }) => {
   return (
@@ -12,7 +12,7 @@ const Home = ({ listings = [] }) => {
             Join us in making the world a better place by donating or requesting
             food today.
           </p>
-          <Link to="/listings" className="btn">
+          <Link href="/listings" className="btn">
             Browse Listings
           </Link>
         </div>

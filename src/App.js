@@ -1,8 +1,15 @@
+// App.js
 import React, { useState } from "react";
-import NavBar from "../components/NavBar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Listings from "./pages/Listings";
+import CreateListing from "./pages/CreateListing";
+import ItemDetails from "./pages/ItemDetails";
+import NavBar from "./components/NavBar";
 
-
-export default function Home() {
+function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [listings, setListings] = useState([
     {
@@ -31,11 +38,12 @@ export default function Home() {
   const addListing = (newListing) => {
     setListings([...listings, { id: listings.length + 1, ...newListing }]);
   };
+
   return (
     <Router>
       <NavBar isLoggedIn={isLoggedIn} onLogout={() => setIsLoggedIn(false)} />
       <Routes>
-        <Route path="/" element={<HomePage listings={listings} />} />
+        <Route path="/" element={<Home listings={listings} />} />
         <Route path="/listings" element={<Listings listings={listings} />} />
         <Route
           path="/CreateListing"
@@ -54,3 +62,5 @@ export default function Home() {
     </Router>
   );
 }
+
+export default App;
